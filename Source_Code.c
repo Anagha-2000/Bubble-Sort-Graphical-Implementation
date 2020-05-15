@@ -1,0 +1,199 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void main()
+{
+  int gd=DETECT;
+  int swap,gm,i,j=60,c[6],m,e,d,col=1;
+  char a[5],r[20];
+  initgraph(&gd,&gm,"c:\\turboC3\\bgi");
+  for(i=0;i<5;i++)
+  {
+    scanf("%d",&c[i]);
+  }
+cleardevice();
+setbkcolor(RED);
+circle(80,200,20);
+circle(140,200,20);
+circle(200,200,20);
+circle(260,200,20);
+circle(320,200,20);
+for(i=0;i<5;i++)
+{
+  sprintf(a,"%d",c[i]);
+  outtextxy(15+j,200,a);
+  j=j+60;
+}
+getch();
+cleardevice();
+setbkcolor(RED);
+for(e=0;e<4;e++)
+{
+  settextstyle(BOLD_FONT,HORIZ_DIR,2);
+  sprintf(r,"round %d",col);
+  col++;
+  outtextxy(200,400,r);
+  settextstyle(DEFAULT_FONT,HORIZ_DIR,1);
+for(d=0;d<5-e-1;d++)
+{
+  if(c[d]>c[d+1])
+  {
+    delay(1000);
+    if(d==0)
+    {
+      for(m=0;m<60;m++)
+      {
+        sprintf(a,"%d",c[2]);
+        outtextxy(195,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255,200,a);
+        sprintf(a,"%d",c[4]);
+        outtextxy(315,200,a);
+        circle(320,200,20);
+        circle(260,200,20);
+        circle(200,200,20);
+        if(m!=59)
+        {
+          delay(30);
+          cleardevice();
+          setbkcolor(RED);
+          sprintf(a,"%d",c[0]);
+          outtextxy(75+m,200,a);
+          sprintf(a,"%d",c[1]);
+          outtextxy(135-m,200,a);
+          circle(80+m,200,20);
+          circle(140-m,200,20);
+        }
+        circle(200,200,20);
+        circle(260,200,20);
+        circle(320,200,20);
+        sprintf(a,"%d",c[2]);
+        outtextxy(195,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255,200,a);
+        sprintf(a,"%d",c[4]);
+        outtextxy(315,200,a);
+      }
+      swap=c[0];
+      c[0]=c[1];
+      c[1]=swap;
+    }
+    if(d==1)
+    {
+      for(m=0;m<60;m++)
+      {
+        sprintf(a,"%d",c[0]);
+        outtextxy(75,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255,200,a);
+        sprintf(a,"%d",c[4]);
+        outtextxy(315,200,a);
+        circle(320,200,20);
+        circle(260,200,20);
+        circle(80,200,20);
+        if(m!=99)
+        {
+          delay(30);
+          cleardevice();
+          setbkcolor(RED);
+          sprintf(a,"%d",c[1]);
+          outtextxy(135+m,200,a);
+          sprintf(a,"%d",c[2]);
+          outtextxy(195-m,200,a);
+          circle(140+m,200,20);
+          circle(200-m,200,20);
+        }
+        circle(80,200,20);
+        circle(260,200,20);
+        circle(320,200,20);
+        sprintf(a,"%d",c[0]);
+        outtextxy(75,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255,200,a);
+        sprintf(a,"%d",c[4]);
+        outtextxy(315,200,a);
+      }
+    swap=c[2];
+    c[2]=c[1];
+    c[1]=swap;
+  }
+  if(d==2)
+  {
+    for(m=0;m<60;m++)
+    {
+      sprintf(a,"%d",c[0]);
+      outtextxy(75,200,a);
+      sprintf(a,"%d",c[1]);
+      outtextxy(135,200,a);
+      sprintf(a,"%d",c[4]);
+      outtextxy(315,200,a);
+      circle(320,200,20);
+      circle(140,200,20);
+      circle(80,200,20);
+      if(m!=59)
+      { delay(30);
+        cleardevice();
+        setbkcolor(RED);
+        sprintf(a,"%d",c[2]);
+        outtextxy(195+m,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255-m,200,a);
+        circle(200+m,200,20);
+        circle(260-m,200,20);
+      }
+    circle(80,200,20);
+    circle(140,200,20);
+    circle(320,200,20);
+    sprintf(a,"%d",c[0]);
+    outtextxy(75,200,a);
+    sprintf(a,"%d",c[1]);
+    outtextxy(135,200,a);
+    sprintf(a,"%d",c[4]);
+    outtextxy(315,200,a);
+  }
+  swap=c[3];
+  c[3]=c[2];
+  c[2]=swap;
+  }
+  if(d==3)
+  {
+    for(m=0;m<60;m++)
+    {
+      sprintf(a,"%d",c[0]);
+      outtextxy(75,200,a);
+      sprintf(a,"%d",c[1]);
+      outtextxy(135,200,a);
+      sprintf(a,"%d",c[2]);
+      outtextxy(195,200,a);
+      circle(200,200,20);
+      circle(140,200,20);
+      circle(80,200,20);
+      if(m!=59)
+      {
+        delay(30);
+        cleardevice();
+        setbkcolor(RED);
+        sprintf(a,"%d",c[4]);
+        outtextxy(315-m,200,a);
+        sprintf(a,"%d",c[3]);
+        outtextxy(255+m,200,a);
+        circle(320-m,200,20);
+        circle(260+m,200,20);
+      }
+    circle(80,200,20);
+    circle(140,200,20);
+    circle(200,200,20);
+    sprintf(a,"%d",c[0]);
+    outtextxy(75,200,a);
+    sprintf(a,"%d",c[1]);
+    outtextxy(135,200,a);
+    sprintf(a,"%d",c[2]);
+    outtextxy(195,200,a);
+  }
+  swap=c[4];
+  c[4]=c[3];
+  c[3]=swap;
+  } } } }
+  getch();
+  closegraph();
+} 
